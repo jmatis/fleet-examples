@@ -8,8 +8,12 @@ metadata:
     tier: backend
 spec:
   ports:
-  - port: 6379
+  - name: redis
+    port: 6379
     targetPort: 6379
+  - name: metrics
+    port: 9121
+    targetPort: 9121
   selector:
     app: redis
     role: master
